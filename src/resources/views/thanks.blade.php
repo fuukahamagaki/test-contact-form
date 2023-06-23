@@ -11,6 +11,6 @@
     </div>
 </div>
 <div class="form__button">
-    <button class="form__button-submit" type="submit">トップページへ</button>
+    <a class="form__button-submit" href="/">トップページへ</a>
 </div>
 @endsection
