@@ -16,6 +16,19 @@
     border: 1px solid #000;
 }
 
+.contact-admin__ttl {
+    display: flex;
+}
+
+.contact-admin__ttl input {
+    width: 100px;
+    height: 60px;
+}
+
+.contact-admin__txt {
+    display: flex;
+}
+
 .admin__button {
     margin-top: 30px;
     text-align: center;
