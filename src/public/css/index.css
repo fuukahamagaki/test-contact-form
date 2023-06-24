@@ -18,7 +18,7 @@
 .form__group {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .form__group-radio {
@@ -26,9 +26,6 @@
     margin-bottom: 15px;
 }
 
-.form__group-content {
-    display: flex;
-}
 
 .form__label--required {
     margin-left: 5px;

@@ -18,13 +18,14 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="text" name="fullname" style="width: 300px;" value="{{ old('fullname') }}" />
-                    <div class="form__input--sample">例）山田</div>
+                    <input type="text" name="fullname"  value="{{ old('fullname') }}" />
+                    <div class="form__input--sample">例）山田　太郎</div>
                     <div class="form__error">
-                        @error('last_name')
+                        @error('fullname')
                         {{ $message }}
                         @enderror
                     </div>
+                </div>
             </div>
         </div>
         <div class="form__group">
@@ -53,11 +54,11 @@
                 <div class="form__input--text">
                     <input type="email" name="email" value="{{ old('email') }}" />
                     <div class="form__input--sample">例）test@example.com</div>
-                </div>
-                <div class="form__error">
-                    @error('email')
-                    {{ $message }}
-                    @enderror
+                    <div class="form__error">
+                        @error('email')
+                        {{ $message }}
+                        @enderror
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,14 +69,13 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <span>〒</span>
                     <input type="text" name="postcode" value="{{ old('postcode') }}" />
                     <div class="form__input--sample">例）123-4567</div>
-                </div>
-                <div class="form__error">
-                    @error('postcode')
-                    {{ $message }}
-                    @enderror
+                    <div class="form__error">
+                        @error('postcode')
+                        {{ $message }}
+                        @enderror
+                    </div>
                 </div>
             </div>
         </div>
@@ -88,11 +88,11 @@
                 <div class="form__input--text">
                     <input type="text" name="address" value="{{ old('address') }}" />
                     <div class="form__input--sample">例）東京都渋谷区千駄ヶ谷1-2-3</div>
-                </div>
-                <div class="form__error">
-                    @error('address')
-                    {{ $message }}
-                    @enderror
+                    <div class="form__error">
+                        @error('address')
+                        {{ $message }}
+                        @enderror
+                    </div>
                 </div>
             </div>
         </div>
@@ -103,7 +103,7 @@
             <div class="form__group-content">
                 <div class="form__input--text">
                     <input type="text" name="building_name" value="{{ old('building_name') }}"/>
-                    <div class="form__input--sample">例）123-4567</div>
+                    <div class="form__input--sample">例）千駄ヶ谷マンション101</div>
                 </div>
             </div>
         </div>
@@ -115,11 +115,11 @@
             <div class="form__group-content">
                 <div class="form__input--textarea">
                     <textarea name="opinion" value="{{ old('opinion') }}" ></textarea>
-                </div>
-                <div class="form__error">
-                    @error('opinion')
-                    {{ $message }}
-                    @enderror
+                    <div class="form__error">
+                        @error('opinion')
+                        {{ $message }}
+                        @enderror
+                    </div>
                 </div>
             </div>
         </div>
