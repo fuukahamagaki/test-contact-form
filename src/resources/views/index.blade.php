@@ -18,21 +18,13 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="text" name="last_name" style="width: 300px;" value="{{ old('last_name') }}" />
+                    <input type="text" name="fullname" style="width: 300px;" value="{{ old('fullname') }}" />
                     <div class="form__input--sample">例）山田</div>
                     <div class="form__error">
                         @error('last_name')
                         {{ $message }}
                         @enderror
                     </div>
-                    <input type="text" name="first_name" style="width: 300px;" value="{{ old('first_name') }}" />
-                    <div class="form__input--sample">例）太郎</div>
-                </div>
-                <div class="form__error">
-                    @error('first_name')
-                    {{ $message }}
-                    @enderror
-                </div>
             </div>
         </div>
         <div class="form__group">
