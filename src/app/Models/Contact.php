@@ -10,6 +10,13 @@ class Contact extends Model
     use HasFactory;
 
     protected $fillable = [
-        'fullname', 'gender', 'email', 'postcode', 'address', 'building_name', 'opinion'
+        'contact_id', 'last_name', 'first_name', 'gender', 'email', 'postcode', 'address', 'building_name', 'opinion'
     ];
+
+    protected $appends = ['full_name'];
+
+    public function getFullNameAttribute()
+    {
+        return $this->last_name . ' ' . $this->first_name;
+    }
 }

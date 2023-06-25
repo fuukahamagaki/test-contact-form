@@ -60,13 +60,14 @@
         <th class="admin__table-th">ご意見</th>
         <th class="admin__table-th"></th>
     </tr>
+    @foreach($contacts as $contact)
     <tr>
-        <td class="admin__table-td">ID</td>
-        <td class="admin__table-td">名前</td>
-        <td class="admin__table-td">性別</td>
-        <td class="admin__table-td">メールアドレス</td>
-        <td class="admin__table-td">ご意見</td>
+        <td class="admin__table-td">{{ $contact['id'] }}</td>
+        <td class="admin__table-td">{{ $contact['full_name'] }}</td>
+        <td class="admin__table-td">{{ $contact['gender'] }}</td>
+        <td class="admin__table-td">{{ $contact['email'] }}</td>
+        <td class="admin__table-td">{{ Str::limit($contact->opinion, 25, '...') }}</td>
         <td class="admin__table-td"><button>削除</button></td>
     </tr>
+    @endforeach
 </table>
-@endsection
