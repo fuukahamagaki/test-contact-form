@@ -61,9 +61,9 @@
             </table>
         </div>
         <div class="form__button">
-            <button class="form__button-submit" type="submit">送信</button>
+            <button class="form__button-submit" type="submit" name='submit' value="submit">送信</button>
         </div>
-        <a href="/">修正する</a>
+        <button type="submit" name="back" value="back">修正する</button>
     </form>
 </div>
 @endsection

@@ -1,4 +1,12 @@
 @extends('layouts.app')
+<style>
+    svg.w-5.h-5 {
+        width: 30px;
+        height: 30px;
+    }
+
+    
+</style>
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
@@ -50,7 +58,7 @@
     </div>
 </div>
 
-<div class="admin-number">全何件中　⚪︎ー⚪︎件</div>
+{{ $contacts->links() }}
 <table class="admin__table">
     <tr class="admin__table-tr">
         <th class="admin__table-th">ID</th>
@@ -61,7 +69,7 @@
         <th class="admin__table-th"></th>
     </tr>
     @foreach($contacts as $contact)
-    <tr>
+    <tr class="admin__table-tr">
         <td class="admin__table-td">{{ $contact['id'] }}</td>
         <td class="admin__table-td">{{ $contact['full_name'] }}</td>
         <td class="admin__table-td">{{ $contact['gender'] }}</td>

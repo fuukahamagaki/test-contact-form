@@ -121,7 +121,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--textarea">
-                    <textarea name="opinion" value="{{ old('opinion') }}" ></textarea>
+                    <textarea name="opinion" >{{ old('opinion') }}</textarea>
                     <div class="form__error">
                         @error('opinion')
                         {{ $message }}
