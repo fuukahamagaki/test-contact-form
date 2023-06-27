@@ -34,6 +34,7 @@ class ContactRequest extends FormRequest
         ];
     }
 
+
     public function messages() {
         return [
             'last_name.required' => '姓を入力してください',

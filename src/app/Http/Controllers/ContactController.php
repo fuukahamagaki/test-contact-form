@@ -14,6 +14,8 @@ class ContactController extends Controller
 
     public function confirm(ContactRequest $request) {
         $contact = $request->only(['full_name','last_name', 'first_name', 'gender','email', 'postcode', 'address', 'building_name', 'opinion']);
+        $str = 'postcode';
+        $str = mb_convert_kana($str, "a");
         return view('confirm', compact('contact'));
     }
 
@@ -28,7 +30,6 @@ class ContactController extends Controller
 
     public function admin(Request $request) {
         $contacts = Contact::Paginate(10);
-        
         $keyword = $request->input('keyword');
         $query = Contact::query();
         if(!empty($keyword)) {

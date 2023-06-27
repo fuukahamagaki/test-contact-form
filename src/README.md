@@ -12,5 +12,6 @@
 laravel8
 
 ## テーブル設計
+https://docs.google.com/spreadsheets/d/1LD6aEms5XbtyG4s3L4ph7QYWNIt-RH7sDBskhHmdfVY/edit#gid=0
 
 ## ER図

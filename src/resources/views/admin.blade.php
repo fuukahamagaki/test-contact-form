@@ -4,8 +4,6 @@
         width: 30px;
         height: 30px;
     }
-
-    
 </style>
 
 @section('css')

@@ -17,8 +17,6 @@
                     <th class="confirm-table__header">お名前</th>
                     <td class="confirm-table__text">
                         <input type="text" name="last_name" value="{{ $contact['last_name'] }}" />
-                    </td>
-                    <td class="confirm-table__text">
                         <input type="text" name="first_name" value="{{ $contact['first_name'] }}" />
                     </td>
                 </tr>
@@ -61,9 +59,10 @@
             </table>
         </div>
         <div class="form__button">
-            <button class="form__button-submit" type="submit" name='submit' value="submit">送信</button>
+            <button class="form__button-submit" type="submit" name='submit' value="submit">送信</button><br>
+            <button type="button" class="btn-info" onClick="history.back()">修正する</button>
         </div>
-        <button type="submit" name="back" value="back">修正する</button>
+            
     </form>
 </div>
 @endsection
