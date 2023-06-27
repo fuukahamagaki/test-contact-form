@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
+use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
@@ -13,7 +14,6 @@ class ContactController extends Controller
 
     public function confirm(ContactRequest $request) {
         $contact = $request->only(['full_name','last_name', 'first_name', 'gender','email', 'postcode', 'address', 'building_name', 'opinion']);
-        
         return view('confirm', compact('contact'));
     }
 
@@ -26,10 +26,21 @@ class ContactController extends Controller
         return view('thanks');
     }
 
-    public function admin() {
-        $contacts = Contact::all();
-        // $contact = $request->only([ 'id', 'full_name', 'last_name', 'first_name', 'gender', 'email', 'postcode', 'address', 'building_name', 'opinion']);
+    public function admin(Request $request) {
         $contacts = Contact::Paginate(10);
-        return view('admin', compact('contacts'));
+        
+        $keyword = $request->input('keyword');
+        $query = Contact::query();
+        if(!empty($keyword)) {
+            $query->where('last_name', 'LIKE', "%{$keyword}%")
+            ->orWhere('first_name', 'LIKE', "%{$keyword}%");
+        }
+
+        return view('admin', compact('contacts', 'keyword'));
+    }
+
+    public function destroy(Request $request){
+        Contact::find($request->id)->delete();
+        return redirect('/admin')->with('message', '削除しました');
     }
 }

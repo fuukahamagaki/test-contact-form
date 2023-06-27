@@ -18,12 +18,11 @@
 
 .contact__name-gender {
     display: flex;
-    padding: 20px;
+    border: 1px solid red;
 }
 
 .contact-admin {
     display: flex;
-    padding: 20px;
 }
 
 .contact-admin__ttl {
