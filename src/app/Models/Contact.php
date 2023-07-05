@@ -19,4 +19,18 @@ class Contact extends Model
     {
         return $this->last_name . ' ' . $this->first_name;
     }
+
+    public function scopeCategorySearch($query, $contact_id)
+    {
+        if (!empty($contact_id)){
+            $query->where('contact_id', $contact_id);
+        }
+    }
+
+    public function scopeKeywordSearch($query, $keyword)
+    {
+        if (!empty($keyword)){
+            $query->where('full_name', 'Like', '%' . $keyword . '%');
+        }
+    }
 }

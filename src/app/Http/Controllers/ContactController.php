@@ -44,4 +44,12 @@ class ContactController extends Controller
         Contact::find($request->id)->delete();
         return redirect('/admin')->with('message', '削除しました');
     }
+
+    public function search(Request $request)
+    {
+        $contacts = Contact::with('full_name')->CategorySearch($request->contact_id)->KeywordSearch($request->keyword)->get();
+        $contacts = Contact::all();
+
+        return view('admin', compact('contacts'));
+    }
 }
